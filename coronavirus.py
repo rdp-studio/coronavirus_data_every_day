@@ -31,7 +31,7 @@ while True:
             worldlistArr=resultObj['worldlist']
             worldlistArr.sort(key=lambda x: int(x.get('conNum','0')),reverse=True)
             
-            fo=open('./index.md','a')
+            fo=open('./readme.md','a')
             fo.writelines('\n# '+times+'\n')
             fo.writelines('感染国家总数：'+str(len(worldlistArr))+'\n')
             fo.writelines('```\n累计确诊：'+certain.rjust(10,' ')+' 较昨日：'+certain_inc+'\n'+'累计死亡：'+die.rjust(10,' ')+' 较昨日：'+die_inc+'\n'+'累计治愈：'+recure.rjust(10,' ')+' 较昨日：'+recure_inc+'\n```\n')
