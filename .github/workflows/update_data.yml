@@ -20,7 +20,7 @@ jobs:
 
     - name: Install Requirements
       run: |
-        pip install re requests pprint
+        pip install requests pprint
     - name: Run Main Program
       run: |
         python coronavirus.py
