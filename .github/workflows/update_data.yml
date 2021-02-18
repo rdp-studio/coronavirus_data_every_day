@@ -1,0 +1,36 @@
+name: 'Data update'
+ 
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 11 * * *'
+
+jobs:
+  run:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+
+    - name: Install Requirements
+      run: |
+        pip install re requests pprint
+    - name: Run Main Program
+      run: |
+        python coronavirus.py
+    - name: Commit
+      run: |
+        git config --global user.email bot-noreply@rdpstudio.top
+        git config --global user.name "RDPStudio Bot"
+        git add .
+        git commit -m "Update"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
