@@ -66,7 +66,3 @@ while True:
                 cureNum=countryObj['cureNum'] # 累计治愈
                 fo.writelines('|'+name+'|'+conadd+'|'+conNum+'|'+deathadd+'|'+deathNum+'|'+cureNum+'|\n')
             fo.close()
-
-    for i in range(1,61):
-        time.sleep(10)
-        print(i*10)2
