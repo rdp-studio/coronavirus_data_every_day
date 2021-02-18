@@ -18,10 +18,10 @@ jobs:
       with:
         python-version: 3.7
 
-    - name: Install Requirements
+    - name: Install reqeusts
       run: |
-        pip install requests pprint
-    - name: Run Main Program
+        pip install requests
+    - name: Run The Spider
       run: |
         python coronavirus.py
     - name: Commit
@@ -29,7 +29,7 @@ jobs:
         git config --global user.email bot-noreply@rdpstudio.top
         git config --global user.name "RDPStudio Bot"
         git add .
-        git commit -m "Update"
+        git commit -m "Data Update"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
