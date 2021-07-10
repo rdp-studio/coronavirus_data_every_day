@@ -41,14 +41,14 @@ while a==1:
             fo.writelines('|国家|新增确诊|累计确诊|新增死亡|累计死亡|累计治愈|'+'\n')
             fo.writelines('|:--:|---:|---:|---:|---:|---:|'+'\n')
 
-            top15=worldlistArr[:15]
-            pattient_countrys=['美国','澳大利亚','加拿大','巴西','印度','丹麦','越南','新加坡','俄罗斯','塞尔维亚','巴基斯坦',]
+            top=worldlistArr[:50]
+            pattient_countrys=['美国','澳大利亚','加拿大','巴西','印度','丹麦','越南','新加坡','俄罗斯','塞尔维亚','巴基斯坦']
             pattient=[c for c in worldlistArr if c['name'] in pattient_countrys]
 
-            for countryObj in top15:
+            for countryObj in top:
                 name=countryObj['name'] # 国家
-                if name=='中国':
-                    continue
+                #if name=='中国':
+                #    continue
                 conadd=countryObj['conadd'] # 新增确诊
                 conNum=countryObj['conNum'] # 累计确诊
                 deathadd=countryObj['deathadd'] # 新增死亡
