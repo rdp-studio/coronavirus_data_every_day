@@ -1,10 +1,12 @@
 import re,requests,json,pprint,time
 import os
 
+a=1
+
 pattern=re.compile(r'^try{sinajp_15844213244528328543098388435\((.*?)\);}catch\(e\){};')
 lasttimes='00:00:00'
 
-while True:
+while a==1:
     res=requests.get('https://gwpre.sina.cn/ncp/foreign?_=1584421324452&callback=sinajp_15844213244528328543098388435')
     match=pattern.search(res.text)
 
@@ -66,3 +68,4 @@ while True:
                 cureNum=countryObj['cureNum'] # 累计治愈
                 fo.writelines('|'+name+'|'+conadd+'|'+conNum+'|'+deathadd+'|'+deathNum+'|'+cureNum+'|\n')
             fo.close()
+            a=0
